@@ -47,8 +47,12 @@
                     <nav class="hide">
                         <a href="#home">Home</a>
                         <a href="#functionalities">Functionalities</a>
-                        <a href="#speaker">Speaker</a>
                         <a href="#upcoming">Upcoming event</a>
+                        @guest
+                            <a href="{{ route('login') }}">Login</a>
+                        @else
+                            <a href="{{ route('home') }}">Dashboard</a>
+                        @endguest
                     </nav>
                     <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
                 </div>

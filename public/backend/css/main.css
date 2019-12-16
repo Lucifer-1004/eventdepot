@@ -3751,7 +3751,7 @@ p, .table, .alert, .carousel {
         top: 0;
     }
 
-    #login-container,
+    #app,
     #login-alt-container {
         width: 480px;
         top: 186px;
