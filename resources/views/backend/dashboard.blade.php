@@ -38,6 +38,8 @@
 
     <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
     <link rel="stylesheet" href="{{asset('backend/css/themes.css')}}">
+
+    <link rel="stylesheet" href="{{asset('backend/css/custom.css')}}">
     <!-- END Stylesheets -->
 
     <!-- Modernizr (browser feature detection library) -->
@@ -283,8 +285,8 @@
                 <!-- Sidebar Content -->
                 <div class="sidebar-content">
                     <!-- Brand -->
-                    <a href="index.html" class="sidebar-brand">
-                        <i class="gi gi-flash"></i><span class="sidebar-nav-mini-hide"><strong>Pro</strong>UI</span>
+                    <a href="{{url('/')}}" class="sidebar-brand">
+                        <img src="{{asset('backend/img/logo-dark.png')}}" class="logo-dark"><span class="sidebar-nav-mini-hide"><strong>Events</strong>Depot</span>
                     </a>
                     <!-- END Brand -->
 
@@ -295,13 +297,14 @@
                                 <img src="{{asset('backend/img/placeholders/avatars/avatar2.jpg')}}" alt="avatar">
                             </a>
                         </div>
-                        <div class="sidebar-user-name">John Doe</div>
+                        <div class="sidebar-user-name">{{$user->name}}</div>
                         <div class="sidebar-user-links">
                             <a href="page_ready_user_profile.html" data-toggle="tooltip" data-placement="bottom" title="Profile"><i class="gi gi-user"></i></a>
                             <a href="page_ready_inbox.html" data-toggle="tooltip" data-placement="bottom" title="Messages"><i class="gi gi-envelope"></i></a>
                             <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
                             <a href="javascript:void(0)" class="enable-tooltip" data-placement="bottom" title="Settings" onclick="$('#modal-user-settings').modal('show');"><i class="gi gi-cogwheel"></i></a>
-                            <a href="login.html" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i></a>
+                            <a href="{{ route('logout') }}" data-toggle="tooltip" data-placement="bottom" title="Logout" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="gi gi-exit"></i></a>
                         </div>
                     </div>
                     <!-- END User Info -->

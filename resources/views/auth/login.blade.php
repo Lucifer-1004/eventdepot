@@ -16,7 +16,7 @@
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="{{asset('backend/img/favicon.png')}}">
+    <link rel="shortcut icon" href="{{asset('backend/img/logo.png')}}">
     <link rel="apple-touch-icon" href="{{asset('backend/img/icon57.png')}}" sizes="57x57">
     <link rel="apple-touch-icon" href="{{asset('backend/img/icon72.png')}}" sizes="72x72">
     <link rel="apple-touch-icon" href="{{asset('backend/img/icon76.png')}}" sizes="76x76">
@@ -27,7 +27,7 @@
     <link rel="apple-touch-icon" href="{{asset('backend/img/icon180.png')}}" sizes="180x180">
     <!-- END Icons -->
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -49,6 +49,8 @@
 
     <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
     <link rel="stylesheet" href="{{asset('backend/css/themes.css')}}">
+
+    <link rel="stylesheet" href="{{asset('backend/css/custom.css')}}">
     <!-- END Stylesheets -->
 
     <!-- Modernizr (browser feature detection library) -->
@@ -65,7 +67,7 @@
     <!-- Login Title -->
     <div class="login-title text-center">
         <a href="{{ url('/') }}">
-        <h1><i class="gi gi-flash"></i> <strong>ProUI</strong><br><small>Please <strong>Login</strong> or <strong>Register</strong></small></h1>
+            <img src="{{asset('backend/img/logo-dark.png')}}" class="logo-dark" alt="Logo image"><h1><strong>EventsDepot</strong><br><small>Please <strong>Login</strong> or <strong>Register</strong></small></h1>
         </a>
     </div>
     <!-- END Login Title -->
