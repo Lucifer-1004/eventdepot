@@ -90,6 +90,13 @@
                     </div>
 
                 </div>
+                <div class="row">
+                    <form method="get" action="{{url('events')}}" class="mt30-center">
+                        @csrf
+                        <input type="hidden" name="str" value="post">
+                        <button class="btn btn-primary " type="submit">Post Events</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -327,100 +334,27 @@
             </div>
         </div>
         <div class="row no-padding">
+            @foreach($events as $event)
             <div class="col-lg-6 col-sm-6">
+
                 <div class="single-events row no-padding">
-                    <div class="col-lg-4 image">
-                        <img src="{{asset('frontend/img/e1.jpg')}}" alt="">
+                    <div class="col-lg-5 image">
+                        <img class="event_image" src="{{asset('images/'.$event->image)}}" alt="" style=".single-events .image::after{content:'21 Dec';}">
                     </div>
-                    <div class="col-lg-7 details">
+                    <div class="col-lg-6 details">
                         <a href="#">
-                            <h4>Addiction When Gambling
-                                Becomes A Problem</h4>
+                            <h4>{{$event->title}}</h4>
                         </a>
                         <p>
-                            inappropriate behavior Lorem ipsum dolor sit amet, consectetur.
+                            {{substr($event->comment, 0 ,50)}}...
                         </p>
+                        <p>{{Carbon\Carbon::parse($event->updated_at)->diffForHumans()}}</p>
                         <p class="meta"><span class="lnr lnr-heart"></span> <span class="likes">05 likes</span> <span class="lnr lnr-bubble"></span> <span class="likes">06 comments</span></p>
                     </div>
                 </div>
-                <div class="single-events row no-padding">
-                    <div class="col-lg-4 image">
-                        <img src="{{asset('frontend/img/e2.jpg')}}" alt="">
-                    </div>
-                    <div class="col-lg-7 details">
-                        <a href="#">
-                            <h4>Addiction When Gambling
-                                Becomes A Problem</h4>
-                        </a>
-                        <p>
-                            inappropriate behavior Lorem ipsum dolor sit amet, consectetur.
-                        </p>
-                        <p class="meta"><span class="lnr lnr-heart"></span> <span class="likes">05 likes</span> <span class="lnr lnr-bubble"></span> <span class="likes">06 comments</span></p>
-                    </div>
-                </div>
-                <div class="single-events row no-padding">
-                    <div class="col-lg-4 image">
-                        <img src="{{asset('frontend/img/e3.jpg')}}" alt="">
-                    </div>
-                    <div class="col-lg-7 details">
-                        <a href="#">
-                            <h4>Addiction When Gambling
-                                Becomes A Problem</h4>
-                        </a>
-                        <p>
-                            inappropriate behavior Lorem ipsum dolor sit amet, consectetur.
-                        </p>
-                        <p class="meta"><span class="lnr lnr-heart"></span> <span class="likes">05 likes</span> <span class="lnr lnr-bubble"></span> <span class="likes">06 comments</span></p>
-                    </div>
-                </div>
+
             </div>
-            <div class="col-lg-6 col-sm-6">
-                <div class="single-events row no-padding">
-                    <div class="col-lg-4 image">
-                        <img src="{{asset('frontend/img/e4.jpg')}}" alt="">
-                    </div>
-                    <div class="col-lg-7 details">
-                        <a href="#">
-                            <h4>Addiction When Gambling
-                                Becomes A Problem</h4>
-                        </a>
-                        <p>
-                            inappropriate behavior Lorem ipsum dolor sit amet, consectetur.
-                        </p>
-                        <p class="meta"><span class="lnr lnr-heart"></span> <span class="likes">05 likes</span> <span class="lnr lnr-bubble"></span> <span class="likes">06 comments</span></p>
-                    </div>
-                </div>
-                <div class="single-events row no-padding">
-                    <div class="col-lg-4 image">
-                        <img src="{{asset('frontend/img/e5.jpg')}}" alt="">
-                    </div>
-                    <div class="col-lg-7 details">
-                        <a href="#">
-                            <h4>Addiction When Gambling
-                                Becomes A Problem</h4>
-                        </a>
-                        <p>
-                            inappropriate behavior Lorem ipsum dolor sit amet, consectetur.
-                        </p>
-                        <p class="meta"><span class="lnr lnr-heart"></span> <span class="likes">05 likes</span> <span class="lnr lnr-bubble"></span> <span class="likes">06 comments</span></p>
-                    </div>
-                </div>
-                <div class="single-events row no-padding">
-                    <div class="col-lg-4 image">
-                        <img src="{{asset('frontend/img/e6.jpg')}}" alt="">
-                    </div>
-                    <div class="col-lg-7 details">
-                        <a href="#">
-                            <h4>Addiction When Gambling
-                                Becomes A Problem</h4>
-                        </a>
-                        <p>
-                            inappropriate behavior Lorem ipsum dolor sit amet, consectetur.
-                        </p>
-                        <p class="meta"><span class="lnr lnr-heart"></span> <span class="likes">05 likes</span> <span class="lnr lnr-bubble"></span> <span class="likes">06 comments</span></p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

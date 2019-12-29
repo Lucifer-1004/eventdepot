@@ -35,7 +35,7 @@ var EcomDashboard = function() {
                         points: {show: true, radius: 6}
                     },
                     {
-                        label: 'Orders',
+                        label: 'Events',
                         data: dataOrders,
                         lines: {show: true, fill: true, fillColor: {colors: [{opacity: 0.15}, {opacity: 0.15}]}},
                         points: {show: true, radius: 6}

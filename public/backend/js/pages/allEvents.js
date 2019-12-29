@@ -1,10 +1,10 @@
 /*
- *  Document   : ecomOrders.js
+ *  Document   : allEvents.js
  *  Author     : pixelcave
  *  Description: Custom javascript code used in eCommerce Orders page
  */
 
-var EcomOrders = function() {
+var AllEvents = function() {
 
     return {
         init: function() {
@@ -28,7 +28,7 @@ var EcomOrders = function() {
             App.datatables();
 
             /* Initialize Datatables */
-            $('#ecom-orders').dataTable({
+            $('#events').dataTable({
                 columnDefs: [
                     { type: 'date-custom', targets: [6] },
                     { orderable: false, targets: [7] }
